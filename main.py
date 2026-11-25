@@ -16,6 +16,7 @@ if JOKE_LENGTH < 1 or JOKE_LENGTH > 199:
     raise SystemExit(f"joke length {JOKE_LENGTH} outside 1-199 characters")
 
 os.makedirs("/output", exist_ok=True)
+os.chmod("/output", 0o755)
 with open("/output/entry.txt", "w", encoding="utf-8", newline="") as f:
     f.write(JOKE)
 os.chmod("/output/entry.txt", 0o644)
